@@ -1,0 +1,218 @@
+{
+  "title": "Record of user",
+  "description": "This document records the details of a user",
+  "type": "object",
+  "properties": {
+    "Users": {
+      "description": "User details",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "login": {
+              "type": "string",
+              "description": "Логін користувача"
+            },
+            "password": {
+              "type": "string",
+              "description": "Пароль користувача"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "Електронна пошта користувача"
+            },
+            "useName": {
+              "type": "string",
+              "description": "Ім'я користувача"
+            }
+          },
+          "required": [
+            "login",
+            "password",
+            "email",
+            "useName"
+          ]
+        }
+      }
+    },
+    "Experts": {
+      "description": "Experts details",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "specialization": {
+              "type": "string",
+              "description": "Спеціалізація єксперта"
+            },
+            "user id": {
+              "type": "integer",
+              "description": "ID користувача"
+            }
+          },
+          "required": [
+            "specialization",
+            "user id"
+          ]
+        }
+      }
+    },
+    "Request for training materials, data and courses": {
+      "description": "Request details",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "purpose": {
+              "type": "string",
+              "description": "Мета запиту на навчальні матеріали, данні і курси"
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "description": "Дата запиту"
+            },
+            "user id": {
+              "type": "integer",
+              "description": "ID користувача"
+            }
+          },
+          "required": [
+            "purpose",
+            "date",
+            "user id"
+          ]
+        }
+      }
+    },
+    "Request for up-to-date information on sports events": {
+      "description": "Request details",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "purpose": {
+              "type": "string",
+              "description": "Мета запиту на актуальну інформацію про спортивні події"
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "description": "Дата запиту"
+            },
+            "user id": {
+              "type": "integer",
+              "description": "ID користувача"
+            }
+          },
+          "required": [
+            "purpose",
+            "date",
+            "user id"
+          ]
+        }
+      }
+    },
+    "Answer to the requests": {
+      "description": "Response details",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "response text": {
+              "type": "string",
+              "description": "Текст відповіді на запит"
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "description": "Дата відповіді"
+            },
+            "request id": {
+              "type": "integer",
+              "description": "ID запиту"
+            }
+          },
+          "required": [
+            "response text",
+            "date",
+            "request id"
+          ]
+        }
+      }
+    },
+    "User sleep data": {
+      "description": "User sleep data",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "Number of hours of sleep": {
+              "type": "string",
+              "description": "Кількість часу спить користувач"
+            },
+            "user id": {
+              "type": "integer",
+              "description": "ID користувача"
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "description": "Дата"
+            }
+          },
+          "required": [
+            "Number of hours of sleep",
+            "user id",
+            "date"
+          ]
+        }
+      }
+    },
+    "User request for consultation": {
+      "description": "Request details",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "purpose": {
+              "type": "string",
+              "description": "Текст запиту на індивідуальну консультацію"
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "description": "Дата запиту"
+            },
+            "user id": {
+              "type": "integer",
+              "description": "ID користувача"
+            }
+          },
+          "required": [
+            "purpose",
+            "date",
+            "user id"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "Users",
+    "Experts",
+    "Request for training materials, data and courses",
+    "Request for up-to-date information on sports events",
+    "Answer to the requests",
+    "User sleep data",
+    "User request for consultation"
+  ]
+}
