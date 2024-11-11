@@ -1,0 +1,73 @@
+{
+  "Users": {
+    "1": {
+      "login": "Tsvetkov",
+      "password": "24062004",
+      "email": "tsvetk@gmail.com",
+      "useName": "Olexandr Tsvetkov"
+    },
+    "2": {
+      "login": "Sapenko",
+      "password": "55522212",
+      "email": "sapenko@gmail.com",
+      "useName": "Victor Sapenko"
+    }
+  },
+  "Expert": {
+    "1": {
+      "specialization": "Інформаційний Експерт",
+      "user id": 2
+    }
+  },
+  "Request for training materials, data and courses": {
+    "1": {
+      "purpose": "Я хочу отримати Данні по забеспеченню і управлінням безпеки праці на робочому місці ",
+      "date": "11.11.2024",
+      "user id": 1
+    },
+    "2": {
+      "purpose": "Хочу доступ до курсу по аналізу статистичних данних",
+      "date": "11.11.2024",
+      "user id": 1
+    }
+  },
+  "Request for up-to-date information on sports events": {
+    "1": {
+      "purpose": "Я хочу отримати свіжі спортивні новини ",
+      "date": "11.11.2024",
+      "user id": 1
+    }
+  },
+  "Answer to the requests": {
+    "1": {
+      "response text": "Ось ваші данні по забеспечені безпеки на робочому місці: https://triniti-sb.com.ua/blog/zabezpechennia-bezpeky-na-robochomu-mistsi-zasoby-zakhystu-v-suchasnykh-orhanizatsiiakh/",
+      "date": "11.11.2024",
+      "request id": 1
+    },
+    "2": {
+      "response text": "Ось ваш курс по аналізу статистичних данних:https://prometheus.org.ua/course/course-v1:IRF+Stat101+2016_T3",
+      "date": "11.11.2024",
+      "request id": 2
+    }
+  },
+  "User sleep data": {
+    "1": {
+      "Number of hours of sleep": "5.12.00",
+      "user id": 1,
+      "date": "10.11.2024"
+    },
+    "2": {
+      "Number of hours of sleep": "6.27.00",
+      "user id": 1,
+      "date": "11.11.2024"
+    }
+  },
+
+  "User request for consultation": {
+    "1": {
+      "purpose": "Я хочу отримати консультацію з Медичним експертом по поводу поганого сну ",
+      "date": "11.11.2024",
+      "user id": 1
+    }
+  }
+}
