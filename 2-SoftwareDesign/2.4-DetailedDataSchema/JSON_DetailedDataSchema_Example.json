@@ -1,0 +1,146 @@
+{
+  "title": "Деталізована схема даних",
+  "description": "Схема описує структуру даних для користувачів, експертів, запитів та відповідей.",
+  "type": "object",
+  "properties": {
+    "users": {
+      "description": "Деталі користувачів",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "login": {
+              "type": "string",
+              "description": "Логін користувача",
+              "pattern": "^[A-Za-z0-9_-]{6,25}$"
+            },
+            "password": {
+              "type": "string",
+              "description": "Пароль користувача",
+              "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d!@#$%^&*()_+]{6,25}$"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "Електронна пошта користувача"
+            },
+            "user_name": {
+              "type": "string",
+              "description": "Ім'я користувача",
+              "minLength": 5,
+              "maxLength": 25
+            }
+          },
+          "required": ["login", "password", "email", "user_name"]
+        }
+      }
+    },
+    "experts": {
+      "description": "Деталі експертів",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "specialization": {
+              "type": "string",
+              "description": "Спеціалізація експерта",
+              "maxLength": 45
+            },
+            "user_id": {
+              "type": "integer",
+              "description": "ID користувача"
+            }
+          },
+          "required": ["specialization", "user_id"]
+        }
+      }
+    },
+    "requests_for_training_materials": {
+      "description": "Деталі запитів на навчальні матеріали",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "purpose": {
+              "type": "string",
+              "description": "Мета запиту",
+              "maxLength": 500
+            },
+            "date": {
+              "type": "string",
+              "pattern": "^\\d{2}\\.\\d{2}\\.\\d{4}$",
+              "description": "Дата запиту (формат DD.MM.YYYY)"
+            },
+            "user_id": {
+              "type": "integer",
+              "description": "ID користувача"
+            }
+          },
+          "required": ["purpose", "date", "user_id"]
+        }
+      }
+    },
+    "answers_to_requests": {
+      "description": "Деталі відповідей на запити",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "response_text": {
+              "type": "string",
+              "description": "Текст відповіді",
+              "maxLength": 500
+            },
+            "date": {
+              "type": "string",
+              "pattern": "^\\d{2}\\.\\d{2}\\.\\d{4}$",
+              "description": "Дата відповіді (формат DD.MM.YYYY)"
+            },
+            "request_id": {
+              "type": "integer",
+              "description": "ID запиту"
+            }
+          },
+          "required": ["response_text", "date", "request_id"]
+        }
+      }
+    },
+    "user_sleep_data": {
+      "description": "Дані про сон користувача",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "hours_of_sleep": {
+              "type": "string",
+              "description": "Кількість годин сну",
+              "pattern": "^(\\d{1,2}([.,]\\d{1,2})?)$"
+            },
+            "user_id": {
+              "type": "integer",
+              "description": "ID користувача"
+            },
+            "date": {
+              "type": "string",
+              "pattern": "^\\d{2}\\.\\d{2}\\.\\d{4}$",
+              "description": "Дата (формат DD.MM.YYYY)"
+            }
+          },
+          "required": ["hours_of_sleep", "user_id", "date"]
+        }
+      }
+    }
+  },
+  "required": [
+    "users",
+    "experts",
+    "requests_for_training_materials",
+    "answers_to_requests",
+    "user_sleep_data"
+  ]
+}
