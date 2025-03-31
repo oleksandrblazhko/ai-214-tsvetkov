@@ -1,0 +1,28 @@
+@startuml
+
+hide circle
+title UML Class Diagram
+
+Class User {
+    login
+    password
+    email
+    user_name
+}
+
+Class Expert {
+    specialization
+}
+
+Class SleepData {
+    hours_of_sleep
+    date
+}
+
+User <|-- Expert
+
+User "1" --> "*" SleepData : tracks
+
+Expert "1" --> "*" SleepData : analyzes
+
+@enduml
